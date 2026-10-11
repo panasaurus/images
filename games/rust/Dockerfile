@@ -57,15 +57,18 @@ RUN dpkg --add-architecture i386 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Node.js WebSocket dependency
+RUN mkdir -p /tmp/ws-install /node_modules \
+    && useradd -d /home/container -m container
+
 WORKDIR /tmp/ws-install
 
 RUN npm init -y \
     && npm install --no-audit --no-fund --save ws \
-    && mkdir -p /node_modules \
     && cp -a node_modules/ws /node_modules/ws \
-    && rm -rf /tmp/ws-install \
-    && npm cache clean --force \
-    && useradd -d /home/container -m container
+    && npm cache clean --force
+
+WORKDIR /
+RUN rm -rf /tmp/ws-install
 
 WORKDIR /home/container
 
