@@ -56,12 +56,12 @@ RUN dpkg --add-architecture i386 \
     && apt-get install -y --no-install-recommends nodejs \
     && rm -rf /var/lib/apt/lists/*
 
-# Install the WebSocket dependency used by the wrapper
+# Install Node.js WebSocket dependency
 RUN mkdir -p /node_modules \
-    && npm install --no-audit --no-fund --prefix / ws \
+    && cd /node_modules \
+    && npm install --no-audit --no-fund --no-save ws \
     && npm cache clean --force \
     && useradd -d /home/container -m container
-
 USER container
 ENV USER=container HOME=/home/container
 
