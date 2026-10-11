@@ -14,68 +14,70 @@
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 #
 
-FROM        --platform=$TARGETOS/$TARGETARCH debian:bookworm-slim
+FROM --platform=linux/amd64 debian:bookworm-slim
 
-LABEL       org.opencontainers.image.title="panasaurus/images:conan_exiles"
-LABEL       org.opencontainers.image.description="Panasaurus image for Conan Exiles dedicated servers"
-LABEL       org.opencontainers.image.url="https://github.com/panasaurus/images"
-LABEL       org.opencontainers.image.source="https://github.com/panasaurus/images"
-LABEL       org.opencontainers.image.vendor="Panasaurus"
-LABEL       org.opencontainers.image.licenses=MIT
+LABEL org.opencontainers.image.title="panasaurus/images:conan_exiles"
+LABEL org.opencontainers.image.description="Panasaurus image for Conan Exiles dedicated servers"
+LABEL org.opencontainers.image.url="https://github.com/panasaurus/images"
+LABEL org.opencontainers.image.source="https://github.com/panasaurus/images"
+LABEL org.opencontainers.image.vendor="Panasaurus"
+LABEL org.opencontainers.image.licenses=MIT
 
-ENV         DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN         dpkg --add-architecture i386 \
-            && apt-get update \
-            && apt-get install -y --no-install-recommends \
-                curl \
-                g++ \
-                gcc \
-                gdb \
-                iproute2 \
-                lib32gcc-s1 \
-                lib32stdc++6 \
-                lib32tinfo6 \
-                lib32z1 \
-                libcurl3-gnutls:i386 \
-                libcurl4 \
-                libcurl4-gnutls-dev:i386 \
-                libfontconfig1 \
-                libgcc-11-dev \
-                libgcc-12-dev \
-                libncurses5:i386 \
-                libsdl1.2debian \
-                libsdl2-2.0-0 \
-                libsdl2-2.0-0:i386 \
-                libtinfo6:i386 \
-                netcat-traditional \
-                net-tools \
-                numactl \
-                tar \
-                telnet \
-                tini \
-                tzdata \
-                xvfb \
-            && rm -rf /var/lib/apt/lists/*
+RUN dpkg --add-architecture i386 \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        curl \
+        g++ \
+        gcc \
+        gdb \
+        iproute2 \
+        lib32gcc-s1 \
+        lib32stdc++6 \
+        lib32tinfo6 \
+        lib32z1 \
+        libcurl3-gnutls:i386 \
+        libcurl4 \
+        libcurl4-gnutls-dev:i386 \
+        libfontconfig1 \
+        libgcc-11-dev \
+        libgcc-12-dev \
+        libncurses5:i386 \
+        libsdl1.2debian \
+        libsdl2-2.0-0 \
+        libsdl2-2.0-0:i386 \
+        libtinfo6:i386 \
+        netcat-traditional \
+        net-tools \
+        numactl \
+        tar \
+        telnet \
+        tini \
+        tzdata \
+        xvfb \
+    && update-ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install rcon
-RUN         curl -sSL https://github.com/gorcon/rcon-cli/releases/download/v0.10.3/rcon-0.10.3-amd64_linux.tar.gz -o /tmp/rcon.tar.gz \
-            && tar xzf /tmp/rcon.tar.gz -C /tmp \
-            && mv /tmp/rcon-0.10.3-amd64_linux/rcon /usr/local/bin/ \
-            && rm -rf /tmp/rcon.tar.gz /tmp/rcon-0.10.3-amd64_linux
+# Install the AMD64 RCON binary.
+RUN curl -fsSL \
+        https://github.com/gorcon/rcon-cli/releases/download/v0.10.3/rcon-0.10.3-amd64_linux.tar.gz \
+        -o /tmp/rcon.tar.gz \
+    && tar xzf /tmp/rcon.tar.gz -C /tmp \
+    && install -m 755 /tmp/rcon-0.10.3-amd64_linux/rcon /usr/local/bin/rcon \
+    && rm -rf /tmp/rcon.tar.gz /tmp/rcon-0.10.3-amd64_linux
 
-ENV         USER=container HOME=/home/container
-WORKDIR     /home/container
+ENV USER=container HOME=/home/container
 
-STOPSIGNAL  SIGINT
+WORKDIR /home/container
 
-COPY        --chmod=755 --chown=root:root ./entrypoint.sh /entrypoint.sh
-ENTRYPOINT  [ "/usr/bin/tini", "-g", "--" ]
-CMD         [ "/entrypoint.sh" ]
+STOPSIGNAL SIGINT
+
+COPY --chmod=755 --chown=root:root ./entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/usr/bin/tini", "-g", "--"]
+CMD ["/entrypoint.sh"]
