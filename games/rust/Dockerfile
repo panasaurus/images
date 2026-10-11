@@ -57,11 +57,12 @@ RUN dpkg --add-architecture i386 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Node.js WebSocket dependency
-RUN mkdir -p /node_modules \
-    && cd /node_modules \
-    && npm install --no-audit --no-fund --no-save ws \
+WORKDIR /node_modules
+
+RUN npm install --no-audit --no-fund --no-save ws \
     && npm cache clean --force \
     && useradd -d /home/container -m container
+
 USER container
 ENV USER=container HOME=/home/container
 
