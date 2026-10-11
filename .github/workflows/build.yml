@@ -1,0 +1,131 @@
+name: build images
+
+on:
+  push:
+    branches: [main, master]
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+    inputs:
+      images:
+        description: "Comma-separated image names to build (e.g. java_21,rust). Empty = changed images."
+        required: false
+        default: ""
+      force_all:
+        description: "Force build of every image"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: build-images-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: shellcheck entrypoints
+        run: shellcheck $(git ls-files '*.sh')
+
+      - name: hadolint Dockerfiles
+        run: |
+          curl -fsSL -o /usr/local/bin/hadolint \
+            https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
+          chmod +x /usr/local/bin/hadolint
+          hadolint --config .hadolint.yml $(git ls-files '*Dockerfile')
+
+      - name: verify build matrix
+        run: python3 scripts/verify-matrix.py
+
+  discover:
+    name: discover images to build
+    runs-on: ubuntu-latest
+    needs: lint
+    outputs:
+      matrix: ${{ steps.resolve.outputs.independent }}
+      dependent: ${{ steps.resolve.outputs.dependent }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: filter
+        if: github.event_name == 'push'
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            java:
+              - 'java/**'
+            nodejs:
+              - 'nodejs/**'
+            python:
+              - 'python/**'
+            go:
+              - 'go/**'
+            dotnet:
+              - 'dotnet/**'
+            oses:
+              - 'oses/**'
+            games:
+              - 'games/**'
+            installers:
+              - 'installers/**'
+            ci:
+              - '.github/**'
+              - 'scripts/**'
+              - 'README.md'
+
+      - name: resolve matrix
+        id: resolve
+        env:
+          EVENT: ${{ github.event_name }}
+          CHANGED: ${{ steps.filter.outputs.changes }}
+          REQUESTED: ${{ github.event.inputs.images }}
+          FORCE_ALL: ${{ github.event.inputs.force_all }}
+        run: |
+          python3 scripts/resolve-matrix.py \
+            --event "$EVENT" \
+            --groups "$CHANGED" \
+            --images "$REQUESTED" \
+            --force-all "$FORCE_ALL" > resolved.json
+          {
+            echo "independent=$(jq -c '.independent' resolved.json)"
+            echo "dependent=$(jq -c '.dependent' resolved.json)"
+          } >> "$GITHUB_OUTPUT"
+
+  build:
+    name: build ${{ matrix.image.name }}
+    needs: discover
+    if: needs.discover.outputs.matrix != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        image: ${{ fromJSON(needs.discover.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/build
+        with:
+          image: ${{ toJSON(matrix.image) }}
+          revision: ${{ github.sha }}
+
+  build-dependent:
+    name: build ${{ matrix.image.name }} (after base image)
+    needs: [discover, build]
+    if: needs.discover.outputs.dependent != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        image: ${{ fromJSON(needs.discover.outputs.dependent) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/build
+        with:
+          image: ${{ toJSON(matrix.image) }}
+          revision: ${{ github.sha }}

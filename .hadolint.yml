@@ -1,0 +1,9 @@
+# Panasaurus Images - hadolint configuration
+# Runtime dependency versions are intentionally unpinned: images are rebuilt
+# monthly from maintained bases, and eggs rely on the latest compatible libs.
+ignored:
+  - DL3008  # apt: versions intentionally unpinned
+  - DL3018  # apk: versions intentionally unpinned
+  - DL3016  # npm: `ws` unpinned for egg compatibility
+  - DL3059  # separate RUN steps are deliberate (rcon install, node repo setup)
+  - DL3029  # --platform on FROM is required for BuildKit multi-arch targeting

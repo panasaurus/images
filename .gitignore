@@ -1,0 +1,4 @@
+# CI/tooling artifacts
+resolved.json
+hadolint
+*.log
