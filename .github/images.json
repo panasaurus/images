@@ -12,126 +12,180 @@
           "name": "java_8",
           "context": "java",
           "file": "java/8/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_8j9",
           "context": "java",
           "file": "java/8j9/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_11",
           "context": "java",
           "file": "java/11/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_11j9",
           "context": "java",
           "file": "java/11j9/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_16",
           "context": "java",
           "file": "java/16/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_16j9",
           "context": "java",
           "file": "java/16j9/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_17",
           "context": "java",
           "file": "java/17/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_17j9",
           "context": "java",
           "file": "java/17j9/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_18",
           "context": "java",
           "file": "java/18/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_18j9",
           "context": "java",
           "file": "java/18j9/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_19",
           "context": "java",
           "file": "java/19/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_19j9",
           "context": "java",
           "file": "java/19j9/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_21",
           "context": "java",
           "file": "java/21/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_22",
           "context": "java",
           "file": "java/22/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_23",
           "context": "java",
           "file": "java/23/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_24",
           "context": "java",
           "file": "java/24/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_25",
           "context": "java",
           "file": "java/25/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "java_26",
           "context": "java",
           "file": "java/26/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": [
             "java_latest"
           ]
@@ -148,63 +202,90 @@
           "name": "nodejs_12",
           "context": "nodejs",
           "file": "nodejs/12/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "nodejs_14",
           "context": "nodejs",
           "file": "nodejs/14/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "nodejs_15",
           "context": "nodejs",
           "file": "nodejs/15/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "nodejs_16",
           "context": "nodejs",
           "file": "nodejs/16/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "nodejs_17",
           "context": "nodejs",
           "file": "nodejs/17/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "nodejs_18",
           "context": "nodejs",
           "file": "nodejs/18/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "nodejs_20",
           "context": "nodejs",
           "file": "nodejs/20/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "nodejs_22",
           "context": "nodejs",
           "file": "nodejs/22/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "nodejs_24",
           "context": "nodejs",
           "file": "nodejs/24/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": [
             "nodejs_latest"
           ]
@@ -221,49 +302,70 @@
           "name": "python_3.7",
           "context": "python",
           "file": "python/3.7/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "python_3.8",
           "context": "python",
           "file": "python/3.8/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "python_3.9",
           "context": "python",
           "file": "python/3.9/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "python_3.10",
           "context": "python",
           "file": "python/3.10/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "python_3.11",
           "context": "python",
           "file": "python/3.11/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "python_3.12",
           "context": "python",
           "file": "python/3.12/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "python_3.13",
           "context": "python",
           "file": "python/3.13/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": [
             "python_latest"
           ]
@@ -280,91 +382,130 @@
           "name": "go_1.14",
           "context": "go",
           "file": "go/1.14/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.15",
           "context": "go",
           "file": "go/1.15/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.16",
           "context": "go",
           "file": "go/1.16/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.17",
           "context": "go",
           "file": "go/1.17/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.18",
           "context": "go",
           "file": "go/1.18/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.19",
           "context": "go",
           "file": "go/1.19/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.20",
           "context": "go",
           "file": "go/1.20/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.21",
           "context": "go",
           "file": "go/1.21/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.22",
           "context": "go",
           "file": "go/1.22/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.23",
           "context": "go",
           "file": "go/1.23/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.24",
           "context": "go",
           "file": "go/1.24/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.25",
           "context": "go",
           "file": "go/1.25/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "go_1.26",
           "context": "go",
           "file": "go/1.26/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": [
             "go_latest"
           ]
@@ -381,21 +522,30 @@
           "name": "dotnet_7",
           "context": "dotnet",
           "file": "dotnet/7/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "dotnet_8",
           "context": "dotnet",
           "file": "dotnet/8/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "dotnet_9",
           "context": "dotnet",
           "file": "dotnet/9/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": [
             "dotnet_latest"
           ]
@@ -412,14 +562,20 @@
           "name": "alpine",
           "context": "oses/alpine",
           "file": "oses/alpine/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "debian",
           "context": "oses/debian",
           "file": "oses/debian/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         }
       ]
@@ -434,28 +590,36 @@
           "name": "source",
           "context": "games/source",
           "file": "games/source/Dockerfile",
-          "platforms": "linux/amd64",
+          "platforms": [
+            "linux/amd64"
+          ],
           "aliases": []
         },
         {
           "name": "conan_exiles",
           "context": "games/conan_exiles",
           "file": "games/conan_exiles/Dockerfile",
-          "platforms": "linux/amd64",
+          "platforms": [
+            "linux/amd64"
+          ],
           "aliases": []
         },
         {
           "name": "rust",
           "context": "games/rust",
           "file": "games/rust/Dockerfile",
-          "platforms": "linux/amd64",
+          "platforms": [
+            "linux/amd64"
+          ],
           "aliases": []
         },
         {
           "name": "hytale",
           "context": "games/hytale",
           "file": "games/hytale/Dockerfile",
-          "platforms": "linux/amd64",
+          "platforms": [
+            "linux/amd64"
+          ],
           "aliases": [],
           "after": [
             "java"
@@ -473,14 +637,19 @@
           "name": "installer_alpine",
           "context": "installers/alpine",
           "file": "installers/alpine/Dockerfile",
-          "platforms": "linux/amd64,linux/arm64",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": []
         },
         {
           "name": "installer_debian",
           "context": "installers/debian",
           "file": "installers/debian/Dockerfile",
-          "platforms": "linux/amd64",
+          "platforms": [
+            "linux/amd64"
+          ],
           "aliases": []
         }
       ]

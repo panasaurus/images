@@ -46,8 +46,13 @@ def main():
                 err(f"image {name}: Dockerfile not found: {img.get('file')}")
             if not (ROOT / img.get("context", "")).is_dir():
                 err(f"image {name}: context not found: {img.get('context')}")
-            platforms = img.get("platforms", "")
-            plats = [p.strip() for p in platforms.split(",") if p.strip()]
+            platforms = img.get("platforms", [])
+            if isinstance(platforms, str):
+                plats = [p.strip() for p in platforms.split(",") if p.strip()]
+            elif isinstance(platforms, list):
+                plats = platforms
+            else:
+                plats = []
             if not plats:
                 err(f"image {name}: no platforms")
             for p in plats:
