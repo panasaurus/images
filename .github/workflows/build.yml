@@ -109,10 +109,13 @@ jobs:
         image: ${{ fromJSON(needs.discover.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/build
+
+      - name: build image
+        uses: ./.github/actions/build
         with:
           image: ${{ toJSON(matrix.image) }}
           revision: ${{ github.sha }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
   build-dependent:
     name: build ${{ matrix.image.name }} (after base image)
@@ -125,7 +128,10 @@ jobs:
         image: ${{ fromJSON(needs.discover.outputs.dependent) }}
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/build
+
+      - name: build image
+        uses: ./.github/actions/build
         with:
           image: ${{ toJSON(matrix.image) }}
           revision: ${{ github.sha }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
