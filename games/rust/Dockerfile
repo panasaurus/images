@@ -17,7 +17,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 #
 
-FROM --platform=$TARGETOS/$TARGETARCH debian:bookworm-slim
+FROM --platform=linux/amd64 debian:bookworm-slim
 
 LABEL org.opencontainers.image.title="panasaurus/images:rust"
 LABEL org.opencontainers.image.description="Panasaurus image for Rust dedicated servers (Oxide/Carbon ready)"
@@ -30,6 +30,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+# System dependencies and 32-bit game libraries
 RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -46,16 +47,17 @@ RUN dpkg --add-architecture i386 \
     && update-ca-certificates \
     && mkdir -p /etc/apt/keyrings \
     && curl -fsSL \
-        'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280' \
+        https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
         | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
-    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x bookworm main" \
+    && chmod 644 /etc/apt/keyrings/nodesource.gpg \
+    && echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" \
         > /etc/apt/sources.list.d/nodesource.list \
-    && printf "Package: nodejs\nPin: origin deb.nodesource.com\nPin-Priority: 1001\n" \
-        > /etc/apt/preferences.d/nodesource \
     && apt-get update \
     && apt-get install -y --no-install-recommends nodejs \
-    && rm -rf /var/lib/apt/lists/* \
-    && mkdir /node_modules \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install the WebSocket dependency used by the wrapper
+RUN mkdir -p /node_modules \
     && npm install --no-audit --no-fund --prefix / ws \
     && npm cache clean --force \
     && useradd -d /home/container -m container
