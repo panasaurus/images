@@ -8,6 +8,9 @@ inputs:
   revision:
     description: 'Git revision used for OCI labels'
     required: true
+  github_token:
+    description: 'GitHub token for GHCR authentication'
+    required: true
 
 runs:
   using: composite
@@ -26,7 +29,7 @@ runs:
       with:
         registry: ghcr.io
         username: ${{ github.repository_owner }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ inputs.github_token }}
 
     - name: compute tags & labels
       id: meta
@@ -49,9 +52,9 @@ runs:
     - name: build & push
       uses: docker/build-push-action@v6
       with:
-        context: ./$(jq -r '.context' <<< "${{ inputs.image }}")
+        context: ${{ format('./{0}', fromJSON(inputs.image).context) }}
         file: ${{ fromJSON(inputs.image).file }}
-        platforms: ${{ fromJSON(inputs.image).platforms }}
+        platforms: ${{ join(fromJSON(inputs.image).platforms, ',') }}
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
@@ -60,9 +63,11 @@ runs:
 
     - name: record build in job summary
       shell: bash
+      env:
+        IMAGE_JSON: ${{ inputs.image }}
       run: |
         {
           echo "| image | tags | platforms |"
           echo "|---|---|---|"
-          echo "| \`$(jq -r '.name' <<< "${{ inputs.image }}")\` | $(jq -r '.tags | join(", ")' <<< "${{ inputs.image }}") | \`${{ fromJSON(inputs.image).platforms }}\` |"
+          echo "| `$(jq -r '.name' <<< "$IMAGE_JSON")` | $(jq -r '.tags | join(", ")' <<< "$IMAGE_JSON") | `$(jq -r '.platforms | join(", ")' <<< "$IMAGE_JSON")` |"
         } >> "$GITHUB_STEP_SUMMARY"
