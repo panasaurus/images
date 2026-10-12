@@ -286,6 +286,16 @@
             "linux/amd64",
             "linux/arm64"
           ],
+          "aliases": []
+        },
+        {
+          "name": "nodejs_25",
+          "context": "nodejs",
+          "file": "nodejs/25/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
           "aliases": [
             "nodejs_latest"
           ]
