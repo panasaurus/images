@@ -48,7 +48,8 @@ Node.js runtimes with the tools eggs commonly need.
 | `:nodejs_18` | amd64 + arm64 | `ghcr.io/panasaurus/images:nodejs_18` |
 | `:nodejs_20` | amd64 + arm64 | `ghcr.io/panasaurus/images:nodejs_20` |
 | `:nodejs_22` | amd64 + arm64 | `ghcr.io/panasaurus/images:nodejs_22` |
-| `:nodejs_24` · `:nodejs_latest` | amd64 + arm64 | `ghcr.io/panasaurus/images:nodejs_24` |
+| `:nodejs_24` | amd64 + arm64 | `ghcr.io/panasaurus/images:nodejs_24` |
+| `:nodejs_25` · `:nodejs_latest` | amd64 + arm64 | `ghcr.io/panasaurus/images:nodejs_25` |
 
 ### Python
 
