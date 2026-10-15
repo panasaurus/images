@@ -3,6 +3,8 @@ name: build images
 on:
   push:
     branches: [main, master]
+  pull_request:
+    branches: [main, master]
   schedule:
     - cron: "0 0 1 * *"
   workflow_dispatch:
@@ -55,7 +57,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - id: filter
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
         uses: dorny/paths-filter@v3
         with:
           filters: |
@@ -152,6 +154,7 @@ jobs:
           image: ${{ toJSON(matrix.image) }}
           revision: ${{ github.sha }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          push: ${{ github.event_name != 'pull_request' }}
 
   build-dependent:
     name: build ${{ matrix.image.name }} (after base image)
@@ -171,3 +174,4 @@ jobs:
           image: ${{ toJSON(matrix.image) }}
           revision: ${{ github.sha }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          push: ${{ github.event_name != 'pull_request' }}

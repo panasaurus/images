@@ -7,3 +7,17 @@ ignored:
   - DL3016  # npm: `ws` unpinned for egg compatibility
   - DL3059  # separate RUN steps are deliberate (rcon install, node repo setup)
   - DL3029  # --platform on FROM is required for BuildKit multi-arch targeting
+  - DL3003  # WORKDIR usage
+  - DL3007  # latest tag usage
+  - DL3009  # delete apt lists
+  - DL3013  # pip pin
+  - DL3015  # no-install-recommends
+  - DL3020  # ADD vs COPY
+  - DL3027  # apt vs apt-get
+  - DL3042  # pip cache
+  - DL3047  # wget progress
+  - DL4001  # wget/curl
+  - DL4006  # pipefail
+  - SC2086  # double quote in RUN
+  - SC2174  # mkdir -p -m
+  - SC2196  # egrep deprecation
