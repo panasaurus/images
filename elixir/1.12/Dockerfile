@@ -2,8 +2,7 @@ FROM --platform=$TARGETOS/$TARGETARCH elixir:1.12.3-slim
 
 LABEL author="MrAvox" maintainer="mravox@proton.me"
 
-RUN         sed -i 's|security.debian.org|archive.debian.org|g' /etc/apt/sources.list /etc/apt/sources.list.d/* 2>/dev/null || true \
-            && sed -i 's|deb.debian.org/debian-security|archive.debian.org/debian-security|g' /etc/apt/sources.list /etc/apt/sources.list.d/* 2>/dev/null || true \
+RUN         sed -i '/debian-security/d' /etc/apt/sources.list /etc/apt/sources.list.d/* 2>/dev/null || true \
             && apt-get update \
             && apt-get install -y --no-install-recommends git dnsutils curl iproute2 ffmpeg tini \
             && rm -rf /var/lib/apt/lists/* \
