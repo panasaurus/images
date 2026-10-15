@@ -37,7 +37,7 @@ RUN         apk add --no-cache \
                 tini
 
 # updating npm
-RUN         npm install npm@latest -g
+RUN         npm install npm@10 -g
 
 # download cloudflared
 ARG         TARGETPLATFORM
