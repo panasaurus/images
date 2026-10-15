@@ -75,6 +75,42 @@ jobs:
               - 'games/**'
             installers:
               - 'installers/**'
+            apps:
+              - 'apps/**'
+            bot:
+              - 'bot/**'
+            box64:
+              - 'box64/**'
+            bun:
+              - 'bun/**'
+            cassandra:
+              - 'cassandra/**'
+            dart:
+              - 'dart/**'
+            elixir:
+              - 'elixir/**'
+            end-of-life:
+              - 'end-of-life/**'
+            erlang:
+              - 'erlang/**'
+            mariadb:
+              - 'mariadb/**'
+            mongodb:
+              - 'mongodb/**'
+            mono:
+              - 'mono/**'
+            postgres:
+              - 'postgres/**'
+            redis:
+              - 'redis/**'
+            rust:
+              - 'rust/**'
+            steamcmd:
+              - 'steamcmd/**'
+            voice:
+              - 'voice/**'
+            wine:
+              - 'wine/**'
             ci:
               - '.github/**'
               - 'scripts/**'

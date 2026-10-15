@@ -299,6 +299,36 @@
           "aliases": [
             "nodejs_latest"
           ]
+        },
+        {
+          "name": "nodejs_19",
+          "context": "nodejs",
+          "file": "nodejs/19/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "nodejs_21",
+          "context": "nodejs",
+          "file": "nodejs/21/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "nodejs_23",
+          "context": "nodejs",
+          "file": "nodejs/23/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
         }
       ]
     },
@@ -379,6 +409,16 @@
           "aliases": [
             "python_latest"
           ]
+        },
+        {
+          "name": "python_3.14",
+          "context": "python",
+          "file": "python/3.14/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
         }
       ]
     },
@@ -559,6 +599,56 @@
           "aliases": [
             "dotnet_latest"
           ]
+        },
+        {
+          "name": "dotnet_2.1",
+          "context": "dotnet",
+          "file": "dotnet/2.1/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "dotnet_3.1",
+          "context": "dotnet",
+          "file": "dotnet/3.1/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "dotnet_5",
+          "context": "dotnet",
+          "file": "dotnet/5/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "dotnet_6",
+          "context": "dotnet",
+          "file": "dotnet/6/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "dotnet_10",
+          "context": "dotnet",
+          "file": "dotnet/10/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
         }
       ]
     },
@@ -587,6 +677,38 @@
             "linux/arm64"
           ],
           "aliases": []
+        },
+        {
+          "name": "debian_bookworm",
+          "context": "oses/debian_bookworm",
+          "file": "oses/debian_bookworm/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "debian_trixie",
+          "context": "oses/debian_trixie",
+          "file": "oses/debian_trixie/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "ubuntu_24.04",
+          "context": "oses/ubuntu_24.04",
+          "file": "oses/ubuntu_24.04/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": [
+            "ubuntu"
+          ]
         }
       ]
     },
@@ -634,6 +756,89 @@
           "after": [
             "java"
           ]
+        },
+        {
+          "name": "altv",
+          "context": "games/altv",
+          "file": "games/altv/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "arma3",
+          "context": "games/arma3",
+          "file": "games/arma3/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "dayz",
+          "context": "games/dayz",
+          "file": "games/dayz/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "minetest",
+          "context": "games/minetest",
+          "file": "games/minetest/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "mohaa",
+          "context": "games/mohaa",
+          "file": "games/mohaa/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "mta",
+          "context": "games/mta",
+          "file": "games/mta/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "samp",
+          "context": "games/samp",
+          "file": "games/samp/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "thebattleforwesnoth",
+          "context": "games/thebattleforwesnoth",
+          "file": "games/thebattleforwesnoth/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "valheim",
+          "context": "games/valheim",
+          "file": "games/valheim/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
         }
       ]
     },
@@ -657,6 +862,768 @@
           "name": "installer_debian",
           "context": "installers/debian",
           "file": "installers/debian/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "installer_ubuntu",
+          "context": "installers/ubuntu",
+          "file": "installers/ubuntu/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "apps",
+      "paths": [
+        "apps/**"
+      ],
+      "images": [
+        {
+          "name": "uptimekuma",
+          "context": "apps/uptimekuma",
+          "file": "apps/uptimekuma/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "bot",
+      "paths": [
+        "bot/**"
+      ],
+      "images": [
+        {
+          "name": "bot_bastion",
+          "context": "bot/bastion",
+          "file": "bot/bastion/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "bot_parkertron",
+          "context": "bot/parkertron",
+          "file": "bot/parkertron/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "bot_red",
+          "context": "bot/red",
+          "file": "bot/red/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "bot_sinusbot",
+          "context": "bot/sinusbot",
+          "file": "bot/sinusbot/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "box64",
+      "paths": [
+        "box64/**"
+      ],
+      "images": [
+        {
+          "name": "box64",
+          "context": "box64",
+          "file": "box64/Dockerfile",
+          "platforms": [
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "bun",
+      "paths": [
+        "bun/**"
+      ],
+      "images": [
+        {
+          "name": "bun_latest",
+          "context": "bun",
+          "file": "bun/latest/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "bun_canary",
+          "context": "bun",
+          "file": "bun/canary/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "cassandra",
+      "paths": [
+        "cassandra/**"
+      ],
+      "images": [
+        {
+          "name": "cassandra_java8_python2",
+          "context": "cassandra",
+          "file": "cassandra/java8_python2/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "cassandra_java11_python3",
+          "context": "cassandra",
+          "file": "cassandra/java11_python3/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "dart",
+      "paths": [
+        "dart/**"
+      ],
+      "images": [
+        {
+          "name": "dart_2.17",
+          "context": "dart",
+          "file": "dart/2.17/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "dart_2.18",
+          "context": "dart",
+          "file": "dart/2.18/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "dart_2.19",
+          "context": "dart",
+          "file": "dart/2.19/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "dart_3.3",
+          "context": "dart",
+          "file": "dart/3.3/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "dart_stable",
+          "context": "dart",
+          "file": "dart/stable/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": [
+            "dart_latest"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "elixir",
+      "paths": [
+        "elixir/**"
+      ],
+      "images": [
+        {
+          "name": "elixir_1.12",
+          "context": "elixir",
+          "file": "elixir/1.12/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "elixir_1.13",
+          "context": "elixir",
+          "file": "elixir/1.13/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "elixir_1.14",
+          "context": "elixir",
+          "file": "elixir/1.14/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "elixir_1.15",
+          "context": "elixir",
+          "file": "elixir/1.15/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "elixir_latest",
+          "context": "elixir",
+          "file": "elixir/latest/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "end-of-life",
+      "paths": [
+        "end-of-life/**"
+      ],
+      "images": [
+        {
+          "name": "end-of-life",
+          "context": "end-of-life",
+          "file": "end-of-life/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "erlang",
+      "paths": [
+        "erlang/**"
+      ],
+      "images": [
+        {
+          "name": "erlang_22",
+          "context": "erlang",
+          "file": "erlang/22/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "erlang_23",
+          "context": "erlang",
+          "file": "erlang/23/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "erlang_24",
+          "context": "erlang",
+          "file": "erlang/24/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "erlang_25",
+          "context": "erlang",
+          "file": "erlang/25/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "erlang_26",
+          "context": "erlang",
+          "file": "erlang/26/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "erlang_27",
+          "context": "erlang",
+          "file": "erlang/27/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "mariadb",
+      "paths": [
+        "mariadb/**"
+      ],
+      "images": [
+        {
+          "name": "mariadb_10.5",
+          "context": "mariadb",
+          "file": "mariadb/10.5/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "mariadb_10.6",
+          "context": "mariadb",
+          "file": "mariadb/10.6/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "mariadb_10.11",
+          "context": "mariadb",
+          "file": "mariadb/10.11/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "mariadb_11.4",
+          "context": "mariadb",
+          "file": "mariadb/11.4/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "mariadb_11.6",
+          "context": "mariadb",
+          "file": "mariadb/11.6/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "mariadb_11.8",
+          "context": "mariadb",
+          "file": "mariadb/11.8/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "mariadb_12.0",
+          "context": "mariadb",
+          "file": "mariadb/12.0/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "mongodb",
+      "paths": [
+        "mongodb/**"
+      ],
+      "images": [
+        {
+          "name": "mongodb_5",
+          "context": "mongodb",
+          "file": "mongodb/5/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "mongodb_6",
+          "context": "mongodb",
+          "file": "mongodb/6/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "mongodb_7",
+          "context": "mongodb",
+          "file": "mongodb/7/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "mongodb_8",
+          "context": "mongodb",
+          "file": "mongodb/8/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "mono",
+      "paths": [
+        "mono/**"
+      ],
+      "images": [
+        {
+          "name": "mono_latest",
+          "context": "mono",
+          "file": "mono/latest/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "postgres",
+      "paths": [
+        "postgres/**"
+      ],
+      "images": [
+        {
+          "name": "postgres_13",
+          "context": "postgres",
+          "file": "postgres/13/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "postgres_14",
+          "context": "postgres",
+          "file": "postgres/14/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "postgres_15",
+          "context": "postgres",
+          "file": "postgres/15/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "postgres_16",
+          "context": "postgres",
+          "file": "postgres/16/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "postgres_17",
+          "context": "postgres",
+          "file": "postgres/17/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "redis",
+      "paths": [
+        "redis/**"
+      ],
+      "images": [
+        {
+          "name": "redis_6",
+          "context": "redis",
+          "file": "redis/6/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "redis_7",
+          "context": "redis",
+          "file": "redis/7/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "redis_8",
+          "context": "redis",
+          "file": "redis/8/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "rust",
+      "paths": [
+        "rust/**"
+      ],
+      "images": [
+        {
+          "name": "rust_1.56",
+          "context": "rust",
+          "file": "rust/1.56/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "rust_1.60",
+          "context": "rust",
+          "file": "rust/1.60/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "rust_latest",
+          "context": "rust",
+          "file": "rust/latest/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "steamcmd",
+      "paths": [
+        "steamcmd/**"
+      ],
+      "images": [
+        {
+          "name": "steamcmd_debian",
+          "context": "steamcmd",
+          "file": "steamcmd/debian/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "steamcmd_ubuntu",
+          "context": "steamcmd",
+          "file": "steamcmd/ubuntu/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "steamcmd_ubuntu_24.04",
+          "context": "steamcmd",
+          "file": "steamcmd/ubuntu_24.04/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "steamcmd_dotnet",
+          "context": "steamcmd",
+          "file": "steamcmd/dotnet/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "steamcmd_proton",
+          "context": "steamcmd",
+          "file": "steamcmd/proton/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "steamcmd_proton_8",
+          "context": "steamcmd",
+          "file": "steamcmd/proton_8/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "steamcmd_sniper",
+          "context": "steamcmd",
+          "file": "steamcmd/sniper/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "voice",
+      "paths": [
+        "voice/**"
+      ],
+      "images": [
+        {
+          "name": "voice_teaspeak",
+          "context": "voice/teaspeak",
+          "file": "voice/teaspeak/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "voice_mumble",
+          "context": "voice/mumble",
+          "file": "voice/mumble/Dockerfile",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "wine",
+      "paths": [
+        "wine/**"
+      ],
+      "images": [
+        {
+          "name": "wine_latest",
+          "context": "wine",
+          "file": "wine/latest/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "wine_devel",
+          "context": "wine",
+          "file": "wine/devel/Dockerfile",
+          "platforms": [
+            "linux/amd64"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "wine_staging",
+          "context": "wine",
+          "file": "wine/staging/Dockerfile",
           "platforms": [
             "linux/amd64"
           ],
