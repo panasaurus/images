@@ -6,7 +6,7 @@ RUN         apt update -y \
 			&& useradd -d /home/container -m container
 
 RUN			add-apt-repository -y ppa:minetestdevs/stable
-RUN			apt update && apt -y install minetest
+RUN			apt update && apt -y -o Acquire::Retries=3 install minetest
 
 USER        container
 ENV         USER=container HOME=/home/container
