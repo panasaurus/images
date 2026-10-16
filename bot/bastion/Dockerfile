@@ -3,14 +3,16 @@ FROM        --platform=$TARGETOS/$TARGETARCH mongo:7-jammy
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 ## install nodejs 20
-RUN apt update && apt install --no-install-recommends -y curl apt-transport-https ca-certificates gnupg \
+RUN rm -f /etc/apt/sources.list.d/mongodb*.list \
+ && apt-get update && apt-get install --no-install-recommends -y curl apt-transport-https ca-certificates gnupg \
  && mkdir -p /usr/share/keyrings \
  && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg \
  && echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list \
- && apt update && apt install -y nodejs \
+ && apt-get update && apt-get install --no-install-recommends -y nodejs \
  && npm install -g npm@10 \
  ## install bastion reqs
- && apt install -y python3 build-essential git libtool netcat ffmpeg iproute2 tzdata tini \
+ && apt-get install --no-install-recommends -y python3 build-essential git libtool netcat-openbsd ffmpeg iproute2 tzdata tini \
+ && rm -rf /var/lib/apt/lists/* \
  ## add container user
  && useradd -d /home/container -m container -s /bin/bash
 
