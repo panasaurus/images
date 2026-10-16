@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2004,SC2086,SC2046,SC2006,SC2155,SC2164,SC2236,SC2001,SC2181,SC2044,SC2143,SC2021,SC2034
 
 ## File: Pterodactyl Arma 3 Image - entrypoint.sh
 ## Author: David Wolfe (Red-Thirten)
@@ -385,7 +386,7 @@ fi
 modifiedStartup=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 
 # Start Headless Clients if applicable
-if [[ ${HC_NUM} > 0 ]]; then
+if [[ ${HC_NUM} -gt 0 ]]; then
     echo -e "\n${GREEN}[STARTUP]:${NC} Starting ${CYAN}${HC_NUM}${NC} Headless Client(s)."
     for i in $(seq ${HC_NUM})
     do

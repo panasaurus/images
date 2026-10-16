@@ -22,7 +22,7 @@
 #
 
 
-FROM        --platform=$TARGETOS/$TARGETARCH eclipse-temurin:18-jdk-jammy
+FROM        --platform=$TARGETOS/$TARGETARCH eclipse-temurin:18-jdk-focal
 
 LABEL       org.opencontainers.image.title="panasaurus/images:java_18"
 LABEL       org.opencontainers.image.description="Panasaurus container image for Java 18 HotSpot (Temurin)"

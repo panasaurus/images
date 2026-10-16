@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2004,SC2086,SC2046,SC2006,SC2155,SC2164,SC2236,SC2001,SC2181,SC2044,SC2143,SC2021,SC2034
 
 ## File: DayZ Image - entrypoint.sh
 ## Author: David Wolfe (Red-Thirten)

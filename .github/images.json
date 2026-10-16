@@ -63,8 +63,7 @@
           "context": "java",
           "file": "java/16j9/Dockerfile",
           "platforms": [
-            "linux/amd64",
-            "linux/arm64"
+            "linux/amd64"
           ],
           "aliases": []
         },
