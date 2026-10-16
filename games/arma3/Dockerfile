@@ -7,8 +7,7 @@ LABEL       org.opencontainers.image.licenses=MIT
 
 ## Update base packages and install dependencies
 ENV         DEBIAN_FRONTEND=noninteractive
-RUN         sed -i '/debian-security/d' /etc/apt/sources.list /etc/apt/sources.list.d/* 2>/dev/null || true \
-            && dpkg --add-architecture i386 \
+RUN         dpkg --add-architecture i386 \
             && apt-get update \
             && apt-get install -y --no-install-recommends \
                 curl \
