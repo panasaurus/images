@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2026 Panasaurus
+# Copyright (c) 2026 Pelecanus
 # Copyright (c) 2021 Matthew Penner
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,11 +23,11 @@
 
 FROM        --platform=$TARGETOS/$TARGETARCH alpine:3.22
 
-LABEL       org.opencontainers.image.title="panasaurus/images:alpine"
-LABEL       org.opencontainers.image.description="Panasaurus base OS image (Alpine 3.22) with core packages"
-LABEL       org.opencontainers.image.url="https://github.com/panasaurus/images"
-LABEL       org.opencontainers.image.source="https://github.com/panasaurus/images"
-LABEL       org.opencontainers.image.vendor="Panasaurus"
+LABEL       org.opencontainers.image.title="pelecanus-dev/images:alpine"
+LABEL       org.opencontainers.image.description="Pelecanus base OS image (Alpine 3.22) with core packages"
+LABEL       org.opencontainers.image.url="https://github.com/pelecanus-dev/images"
+LABEL       org.opencontainers.image.source="https://github.com/pelecanus-dev/images"
+LABEL       org.opencontainers.image.vendor="Pelecanus"
 LABEL       org.opencontainers.image.licenses=MIT
 
 #hadolint ignore=DL3018

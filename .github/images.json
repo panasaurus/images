@@ -1,6 +1,6 @@
 {
-  "registry": "ghcr.io/panasaurus/images",
-  "repo": "github.com/panasaurus/images",
+  "registry": "ghcr.io/pelecanus-dev/images",
+  "repo": "github.com/pelecanus-dev/images",
   "groups": [
     {
       "name": "java",
@@ -607,7 +607,10 @@
             "linux/amd64",
             "linux/arm64"
           ],
-          "aliases": []
+          "aliases": [],
+          "after": [
+            "oses"
+          ]
         },
         {
           "name": "dotnet_3.1",
@@ -617,7 +620,10 @@
             "linux/amd64",
             "linux/arm64"
           ],
-          "aliases": []
+          "aliases": [],
+          "after": [
+            "oses"
+          ]
         },
         {
           "name": "dotnet_5",
@@ -627,7 +633,10 @@
             "linux/amd64",
             "linux/arm64"
           ],
-          "aliases": []
+          "aliases": [],
+          "after": [
+            "oses"
+          ]
         },
         {
           "name": "dotnet_6",
@@ -637,7 +646,10 @@
             "linux/amd64",
             "linux/arm64"
           ],
-          "aliases": []
+          "aliases": [],
+          "after": [
+            "oses"
+          ]
         },
         {
           "name": "dotnet_10",
@@ -647,7 +659,10 @@
             "linux/amd64",
             "linux/arm64"
           ],
-          "aliases": []
+          "aliases": [],
+          "after": [
+            "oses"
+          ]
         }
       ]
     },
@@ -800,7 +815,10 @@
           "platforms": [
             "linux/amd64"
           ],
-          "aliases": []
+          "aliases": [],
+          "after": [
+            "oses"
+          ]
         },
         {
           "name": "mta",
@@ -1359,7 +1377,10 @@
             "linux/amd64",
             "linux/arm64"
           ],
-          "aliases": []
+          "aliases": [],
+          "after": [
+            "oses"
+          ]
         }
       ]
     },
@@ -1608,7 +1629,10 @@
           "platforms": [
             "linux/amd64"
           ],
-          "aliases": []
+          "aliases": [],
+          "after": [
+            "oses"
+          ]
         },
         {
           "name": "wine_devel",
@@ -1617,7 +1641,10 @@
           "platforms": [
             "linux/amd64"
           ],
-          "aliases": []
+          "aliases": [],
+          "after": [
+            "oses"
+          ]
         },
         {
           "name": "wine_staging",
@@ -1626,7 +1653,10 @@
           "platforms": [
             "linux/amd64"
           ],
-          "aliases": []
+          "aliases": [],
+          "after": [
+            "oses"
+          ]
         }
       ]
     }

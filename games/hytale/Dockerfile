@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2026 Panasaurus
+# Copyright (c) 2026 Pelecanus
 # Copyright (c) 2021 Matthew Penner
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,18 +21,18 @@
 # SOFTWARE.
 #
 
-FROM        --platform=$TARGETOS/$TARGETARCH ghcr.io/panasaurus/images:java_25
+FROM        --platform=$TARGETOS/$TARGETARCH ghcr.io/pelecanus-dev/images:java_25
 
-LABEL       org.opencontainers.image.title="panasaurus/images:hytale"
-LABEL       org.opencontainers.image.description="Panasaurus image for Hytale servers (Java 25 based)"
-LABEL       org.opencontainers.image.url="https://github.com/panasaurus/images"
-LABEL       org.opencontainers.image.source="https://github.com/panasaurus/images"
-LABEL       org.opencontainers.image.vendor="Panasaurus"
+LABEL       org.opencontainers.image.title="pelecanus-dev/images:hytale"
+LABEL       org.opencontainers.image.description="Pelecanus image for Hytale servers (Java 25 based)"
+LABEL       org.opencontainers.image.url="https://github.com/pelecanus-dev/images"
+LABEL       org.opencontainers.image.source="https://github.com/pelecanus-dev/images"
+LABEL       org.opencontainers.image.vendor="Pelecanus"
 LABEL       org.opencontainers.image.licenses=MIT
 
 USER        root
 
-COPY        --from=ghcr.io/panasaurus/images:java_25 /entrypoint.sh /java.sh
+COPY        --from=ghcr.io/pelecanus-dev/images:java_25 /entrypoint.sh /java.sh
 RUN         chmod +x /java.sh
 
 RUN         apt-get update \

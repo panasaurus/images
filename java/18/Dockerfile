@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2026 Panasaurus
+# Copyright (c) 2026 Pelecanus
 # Copyright (c) 2021 Matthew Penner
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,11 +24,11 @@
 
 FROM        --platform=$TARGETOS/$TARGETARCH eclipse-temurin:18-jdk-focal
 
-LABEL       org.opencontainers.image.title="panasaurus/images:java_18"
-LABEL       org.opencontainers.image.description="Panasaurus container image for Java 18 HotSpot (Temurin)"
-LABEL       org.opencontainers.image.url="https://github.com/panasaurus/images"
-LABEL       org.opencontainers.image.source="https://github.com/panasaurus/images"
-LABEL       org.opencontainers.image.vendor="Panasaurus"
+LABEL       org.opencontainers.image.title="pelecanus-dev/images:java_18"
+LABEL       org.opencontainers.image.description="Pelecanus container image for Java 18 HotSpot (Temurin)"
+LABEL       org.opencontainers.image.url="https://github.com/pelecanus-dev/images"
+LABEL       org.opencontainers.image.source="https://github.com/pelecanus-dev/images"
+LABEL       org.opencontainers.image.vendor="Pelecanus"
 LABEL       org.opencontainers.image.licenses=MIT
 
 RUN         apt-get update \

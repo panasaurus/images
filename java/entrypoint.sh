@@ -34,14 +34,14 @@ export INTERNAL_IP
 cd /home/container || exit 1
 
 # Print Java version
-printf "\033[1m\033[33mcontainer@panasaurus~ \033[0mjava -version\n"
+printf "\033[1m\033[33mcontainer@pelecanus~ \033[0mjava -version\n"
 java -version
 
 # Check for end-of-life marker
 if [ "${YOLK_EOL_NAG_WARNING+x}" ]; then
 	echo "======================================================================"
 	echo "DEPRECATION WARNING:"
-	echo "This version of the Panasaurus image has been marked as end-of-life."
+	echo "This version of the Pelecanus image has been marked as end-of-life."
 	echo "Please migrate to a supported version as soon as possible to ensure"
 	echo "continued security updates and support."
 	echo "This image will be removed/disabled in the near future."
@@ -58,6 +58,6 @@ PARSED=$(echo "${STARTUP}" | sed -e 's/{{/${/g' -e 's/}}/}/g' | eval echo "$(cat
 
 # Display the command we're running in the output, and then execute it with the env
 # from the container itself.
-printf "\033[1m\033[33mcontainer@panasaurus~ \033[0m%s\n" "$PARSED"
+printf "\033[1m\033[33mcontainer@pelecanus~ \033[0m%s\n" "$PARSED"
 # shellcheck disable=SC2086
 exec env ${PARSED}

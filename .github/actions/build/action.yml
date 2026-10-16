@@ -1,5 +1,5 @@
 name: 'build & push image'
-description: 'Builds one Panasaurus image from a matrix entry and pushes it to GHCR'
+description: 'Builds one Pelecanus image from a matrix entry and pushes it to GHCR'
 
 inputs:
   image:

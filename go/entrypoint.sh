@@ -35,7 +35,7 @@ export INTERNAL_IP
 cd /home/container || exit 1
 
 # Print Go version
-printf "\033[1m\033[33mcontainer@panasaurus~ \033[0mgo version\n"
+printf "\033[1m\033[33mcontainer@pelecanus~ \033[0mgo version\n"
 go version
 
 # Check for end-of-life marker
@@ -59,6 +59,6 @@ PARSED=$(echo "${STARTUP}" | sed -e 's/{{/${/g' -e 's/}}/}/g' | eval echo "$(cat
 
 # Display the command we're running in the output, and then execute it with the env
 # from the container itself.
-printf "\033[1m\033[33mcontainer@panasaurus~ \033[0m%s\n" "$PARSED"
+printf "\033[1m\033[33mcontainer@pelecanus~ \033[0m%s\n" "$PARSED"
 # shellcheck disable=SC2086
 exec env ${PARSED}

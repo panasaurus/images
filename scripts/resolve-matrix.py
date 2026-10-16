@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Resolve which Panasaurus images a CI run should build.
+"""Resolve which Pelecanus images a CI run should build.
 
 Inputs (via env/args set by the workflow):
   --event      push | schedule | workflow_dispatch

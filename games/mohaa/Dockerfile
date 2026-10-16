@@ -1,4 +1,4 @@
-FROM        ghcr.io/ptero-eggs/yolks:debian
+FROM        ghcr.io/pelecanus-dev/images:debian
 
 LABEL       author="Manuel Dielacher" maintainer="th3dilli@gmx.at"
 

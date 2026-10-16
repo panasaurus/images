@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2026 Panasaurus
+# Copyright (c) 2026 Pelecanus
 # Copyright (c) 2021 Matthew Penner
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,11 +19,11 @@
 
 FROM --platform=linux/amd64 debian:bookworm-slim
 
-LABEL org.opencontainers.image.title="panasaurus/images:rust"
-LABEL org.opencontainers.image.description="Panasaurus image for Rust dedicated servers (Oxide/Carbon ready)"
-LABEL org.opencontainers.image.url="https://github.com/panasaurus/images"
-LABEL org.opencontainers.image.source="https://github.com/panasaurus/images"
-LABEL org.opencontainers.image.vendor="Panasaurus"
+LABEL org.opencontainers.image.title="pelecanus-dev/images:rust"
+LABEL org.opencontainers.image.description="Pelecanus image for Rust dedicated servers (Oxide/Carbon ready)"
+LABEL org.opencontainers.image.url="https://github.com/pelecanus-dev/images"
+LABEL org.opencontainers.image.source="https://github.com/pelecanus-dev/images"
+LABEL org.opencontainers.image.vendor="Pelecanus"
 LABEL org.opencontainers.image.licenses=MIT
 
 ENV DEBIAN_FRONTEND=noninteractive

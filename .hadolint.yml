@@ -1,4 +1,4 @@
-# Panasaurus Images - hadolint configuration
+# Pelecanus Images - hadolint configuration
 # Runtime dependency versions are intentionally unpinned: images are rebuilt
 # monthly from maintained bases, and eggs rely on the latest compatible libs.
 ignored:
