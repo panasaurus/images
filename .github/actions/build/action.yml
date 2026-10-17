@@ -20,7 +20,7 @@ runs:
   using: composite
   steps:
     - name: set up QEMU
-      if: contains(fromJSON(inputs.image).platforms, 'arm64')
+      if: contains(fromJSON(inputs.image).platforms, 'linux/arm64')
       uses: docker/setup-qemu-action@v3
       with:
         image: tonistiigi/binfmt:latest
